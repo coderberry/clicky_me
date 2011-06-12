@@ -20,6 +20,7 @@ module ClickyMe
     
     def shorten(url, opts={})
       request = create_url(url, opts)
+      puts request
       result = get_result(request)
       return result
     end
@@ -30,8 +31,8 @@ module ClickyMe
         :password => @password,
         :url => url
       })
-      args.merge({ :site_id => @site_id }) if @site_id
-      args.merge({ :sitekey_admin => @sitekey_admin }) if @sitekey_admin
+      args = args.merge({ :site_id => @site_id }) if @site_id
+      args = args.merge({ :sitekey_admin => @sitekey_admin }) if @sitekey_admin
       url = URI.join(url, API_URL)
       url.query = args.map { |k,v| "%s=%s" % [CGI.escape(k.to_s), CGI.escape(v.to_s)] }.join("&")
       url
