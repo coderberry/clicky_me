@@ -17,7 +17,6 @@ Use the http://clicky.me API to shorten URLs
 ### Site-based Tracked Usage
     
     require 'clicky_me'
-    require 'clicky_me'
     client = ClickyMe.new('username', 'password', 'site_id', 'sitekey_admin')
     results = client.shorten('http://www.google.com').url
     
