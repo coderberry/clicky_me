@@ -2,11 +2,11 @@
 
 Use the http://clicky.me API to shorten URLs
 
-## Installation
+### Installation
 
     gem install clicky_me
   
-## Usage
+### Usage
 
     require 'clicky_me'
     client = ClickyMe.new('username','password')
